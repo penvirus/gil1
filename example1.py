@@ -7,3 +7,4 @@ def worker(i):
 print 'pid=%d' % os.getpid()
 pool = Pool(processes=4)
 pool.map(worker, xrange(10))
+pool.terminate()
