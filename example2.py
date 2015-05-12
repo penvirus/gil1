@@ -34,7 +34,6 @@ def test_sthread():
 
     return end - begin
 
-if __name__ == '__main__':
-    print 'mprocess: %.6f' % test_(Process, MPQ)
-    print 'mthread:  %.6f' % test_(Thread, Queue)
-    print 'sthread:  %.6f' % test_sthread()
+print 'mprocess: %.6f' % test_(Process, MPQ)
+print 'mthread:  %.6f' % test_(Thread, Queue)
+print 'sthread:  %.6f' % test_sthread()
