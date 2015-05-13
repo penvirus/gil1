@@ -5,10 +5,14 @@ duration = 10
 def internal_busy():
     import time
 
+    count = 0
     begin = time.time()
     while True:
         if time.time() - begin > duration:
             break
+        count += 1
+
+    print 'internal_busy(): count = %u' % count
 
 def external_busy():
     from ctypes import CDLL

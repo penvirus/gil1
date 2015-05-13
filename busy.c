@@ -1,14 +1,20 @@
 #include <Python.h>
 #include <time.h>
+#include <stdio.h>
+#include <stdint.h>
 
 void busy_wait(unsigned int duration)
 {
+	uint64_t count = 0;
 	time_t begin = time(NULL);
 
 	while(1) {
 		if(time(NULL) - begin > duration)
 			break;
+		count++;
 	}
+
+	printf("busy_wait(): count = %" PRIu64 "\n", count);
 }
 
 static PyObject *with_lock(PyObject *self, PyObject *args)
