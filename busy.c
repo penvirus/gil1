@@ -1,5 +1,4 @@
 #include <Python.h>
-#include <stdlib.h>
 #include <time.h>
 
 void busy_wait(unsigned int duration)
@@ -42,8 +41,8 @@ static PyObject *without_lock(PyObject *self, PyObject *args)
 }
 
 static PyMethodDef busy_methods[] = {
-	{"with_lock",  with_lock, METH_VARARGS, "Busy wait for a given duration with GIL"},
-	{"without_lock",  without_lock, METH_VARARGS, "Busy wait for a given duration without GIL"},
+	{"with_lock", with_lock, METH_VARARGS, "Busy wait for a given duration with GIL"},
+	{"without_lock", without_lock, METH_VARARGS, "Busy wait for a given duration without GIL"},
 	{NULL, NULL, 0, NULL}
 };
 
