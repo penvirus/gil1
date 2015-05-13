@@ -14,7 +14,7 @@ void busy_wait(unsigned int duration)
 static PyObject *with_lock(PyObject *self, PyObject *args)
 {
 	unsigned int duration;
-	
+
 	if(!PyArg_ParseTuple(args, "I", &duration))
 		return NULL;
 
@@ -27,7 +27,7 @@ static PyObject *with_lock(PyObject *self, PyObject *args)
 static PyObject *without_lock(PyObject *self, PyObject *args)
 {
 	unsigned int duration;
-	
+
 	if(!PyArg_ParseTuple(args, "I", &duration))
 		return NULL;
 
